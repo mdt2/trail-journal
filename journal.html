@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Trail Journal</title>
+		<link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link rel="stylesheet" type="text/css" href="generic.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<!-- Firebase auth -->
+		<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+		<!-- Google sign in -->
+		<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+		<meta name="google-signin-client_id" content="816100361751-a01835m741dt1iornu0l5aadp326jdr0.apps.googleusercontent.com">
+
+		<!-- MUI Google Material Design Framework -->
+		<link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
+		<script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="nav">
+				<div class="flex-left">
+					<img class="flex-item" src="assets/pine-tree.svg" alt="pine tree logo">
+					<h2 class="flex-item">Trail Journal</h2>
+				</div>
+				<div class="flex-right">
+					<div class="flex-item">
+						<h4 class="greeting"></h4>
+					</div>
+					<div class="flex-item signout">
+						<a href="index.html">Sign out</a>
+					</div>
+				</div>
+			</header>
+
+			<div class="content">
+				<div class="new-trail-card">
+					<div class="mui-form">
+						<img class="close" src="assets/ic-close.svg" alt="close icon">
+						<legend>Add a trail</legend>
+						<div class="mui-textfield mui-textfield--float-label">
+					    	<input type="text" name="trail-name" class="name" required>
+					    	<label for="name">Name</label>
+						</div>
+						<div class="mui-textfield mui-textfield--float-label">
+					        <input type="text" name="trail-state" class="location" required>
+					    	<label for="state">State</label>
+						</div>
+						<div class="mui-textfield mui-textfield--float-label">
+					        <input type="notes" name="trail-notes" class="notes">
+					        <label for="notes">Notes</label>
+						</div>
+						<div class="mui-checkbox">
+							Rating
+							<div class="star-rating">
+								<input type="radio" id="5-stars" name="rating" value="5" />
+							  	<label for="5-stars" class="star">&#9733;</label>
+							  	<input type="radio" id="4-stars" name="rating" value="4" />
+							  	<label for="4-stars" class="star">&#9733;</label>
+							  	<input type="radio" id="3-stars" name="rating" value="3" />
+							  	<label for="3-stars" class="star">&#9733;</label>
+							 	<input type="radio" id="2-stars" name="rating" value="2" />
+							 	<label for="2-stars" class="star">&#9733;</label>
+							  	<input type="radio" id="1-star" name="rating" value="1" />
+							  	<label for="1-star" class="star">&#9733;</label>
+							</div>
+						</div>
+						<div class="mui-textfield">
+							<label for="image_uploads">Choose images to upload (PNG, JPG)</label>
+							<input type="file" name="fileupload" value="fileupload" accept=".png, .jpg, .jpeg" class="image" required>
+						</div>
+						<div class="submit">
+							<button type="submit" class="mui-btn mui-btn--raised save-btn">Save</button>
+							<button type="submit" class="mui-btn mui-btn--raised update-btn">Update</button>
+						</div>
+					</div>
+				</div>
+				<div class="trail-card">
+					<button class="mui-btn mui-btn--fab mui-btn--danger" id="fab"><h2>+</h2></button>
+				</div>
+			</div>
+		</div>
+		
+		<script type='text/javascript' src='config.js'></script>
+		<script src="trail.js"></script>
+
+	</body>
+</html>
